@@ -1,0 +1,50 @@
+{
+  "name": "@toomuchdesign/create-project",
+  "version": "1.0.0",
+  "description": "Personal project starter",
+  "files": [
+    "index.js",
+    "bin.js",
+    "template"
+  ],
+  "scripts": {
+    "test": "ava",
+    "preversion": "npm run prepublish",
+    "version": "git add package.json",
+    "postversion": "git push && git push --tags",
+    "prepublish": "npm t",
+    "format": "prettier --write \"**/*.{js,json,md}\""
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toomuchdesign/create-project.git"
+  },
+  "author": "Andrea Carraro <me@andreacarraro.it>",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.20.0",
+    "ncp": "^2.0.0"
+  },
+  "devDependencies": {
+    "ava": "^1.4.1",
+    "husky": "^1.0.0",
+    "lint-staged": "^7.0.0",
+    "prettier": "^1.0.0",
+    "rimraf": "^2.6.3"
+  },
+  "bin": {
+    "toomuchdesign-create-project": "./cli.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm t"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
