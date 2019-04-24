@@ -4,7 +4,7 @@
   "description": "Personal project starter",
   "files": [
     "index.js",
-    "bin.js",
+    "cli.js",
     "template"
   ],
   "scripts": {
