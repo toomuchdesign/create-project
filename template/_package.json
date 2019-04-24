@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "files": ["src", "!__tests__"],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"No test specified\"",
     "preversion": "npm run prepublish",
     "version": "git add package.json",
     "postversion": "git push && git push --tags",

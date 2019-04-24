@@ -20,6 +20,10 @@ module.exports = function createProject(projectName) {
     path.join(projectPath, '_package.json'),
     path.join(projectPath, 'package.json')
   );
+  fs.renameSync(
+    path.join(projectPath, '_.gitignore'),
+    path.join(projectPath, '.gitignore')
+  );
 
   console.log(`Project copied in "${projectName}"!`);
 };

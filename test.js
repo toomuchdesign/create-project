@@ -27,6 +27,9 @@ test('creates new project in expected folder', async t => {
 
   const projectPackage = path.join(projectFolder, 'package.json');
   t.is(fs.existsSync(projectPackage), true);
+
+  const projectGitignore = path.join(projectFolder, '.gitignore');
+  t.is(fs.existsSync(projectGitignore), true);
 });
 
 test('errors when no project name is provided', async t => {
