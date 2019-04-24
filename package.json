@@ -1,6 +1,6 @@
 {
   "name": "@toomuchdesign/create-project",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Personal project starter",
   "files": [
     "index.js",
