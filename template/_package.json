@@ -3,10 +3,7 @@
   "version": "0.0.0",
   "description": "",
   "main": "src/index.js",
-  "files": [
-    "src",
-    "!__tests__"
-  ],
+  "files": ["src", "!__tests__"],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "preversion": "npm run prepublish",
@@ -33,14 +30,7 @@
     }
   },
   "lint-staged": {
-    "**/*.{js,json}": [
-      "prettier --write",
-      "npm t -- .",
-      "git add"
-    ],
-    "**/*.{md}": [
-      "prettier --write",
-      "git add"
-    ]
+    "**/*.{js,json}": ["prettier --write", "npm t -- .", "git add"],
+    "**/*.{md}": ["prettier --write", "git add"]
   }
 }

@@ -1,6 +1,5 @@
 const path = require('path');
-const fs = require('fs');
-const ncp = require('ncp').ncp;
+const fs = require('fs-extra');
 
 module.exports = function createProject(projectName) {
   if (!projectName) {
@@ -16,11 +15,11 @@ module.exports = function createProject(projectName) {
   const templatePath = path.resolve(__dirname, './template');
   const projectPath = process.cwd() + '/' + projectName;
 
-  ncp(templatePath, projectPath, function(err) {
-    if (err) {
-      throw err;
-    }
-  });
+  fs.copySync(templatePath, projectPath);
+  fs.renameSync(
+    path.join(projectPath, '_package.json'),
+    path.join(projectPath, 'package.json')
+  );
 
   console.log(`Project copied in "${projectName}"!`);
 };
