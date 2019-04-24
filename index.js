@@ -22,5 +22,5 @@ module.exports = function createProject(projectName) {
     }
   });
 
-  console.log('Project copied in "${projectName}"!');
+  console.log(`Project copied in "${projectName}"!`);
 };
