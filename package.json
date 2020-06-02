@@ -23,15 +23,15 @@
   "author": "Andrea Carraro <me@andreacarraro.it>",
   "license": "ISC",
   "dependencies": {
-    "commander": "^2.20.0",
-    "fs-extra": "^7.0.1"
+    "commander": "^5.1.0",
+    "fs-extra": "^9.0.0"
   },
   "devDependencies": {
-    "ava": "^1.4.1",
-    "husky": "^1.0.0",
-    "lint-staged": "^7.0.0",
-    "prettier": "^1.0.0",
-    "rimraf": "^2.6.3"
+    "ava": "^3.8.2",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.7",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.2"
   },
   "bin": {
     "toomuchdesign-create-project": "./cli.js"
