@@ -6,7 +6,7 @@
   "files": ["src", "!__tests__"],
   "scripts": {
     "test": "echo \"No test specified\"",
-    "preversion": "npm run prepublish",
+    "preversion": "npm run prepare",
     "version": "git add package.json",
     "postversion": "git push && git push --tags",
     "prepare": "npm t",
@@ -30,7 +30,7 @@
     }
   },
   "lint-staged": {
-    "**/*.{js,json}": ["prettier --write", "npm t -- .", "git add"],
-    "**/*.{md}": ["prettier --write", "git add"]
+    "**/*.{js,json}": ["prettier --write", "npm t -- ."],
+    "**/*.{md}": ["prettier --write"]
   }
 }
