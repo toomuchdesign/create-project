@@ -14,7 +14,8 @@
     "postversion": "git push && git push --tags",
     "prepublish": "npm t",
     "prepare": "npx simple-git-hooks && npm t",
-    "format": "prettier --write \"**/*.{js,json,md}\""
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write ."
   },
   "keywords": [],
   "repository": {
@@ -42,7 +43,7 @@
   },
   "lint-staged": {
     "**/*.{js,json,md}": [
-      "prettier --write"
+      "prettier"
     ]
   }
 }

@@ -10,7 +10,8 @@
     "version": "git add package.json",
     "postversion": "git push && git push --tags",
     "prepare": "npx simple-git-hooks && npm t",
-    "format": "prettier --write \"**/*.{js,json,md}\""
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write ."
   },
   "keywords": [],
   "repository": {
@@ -28,7 +29,7 @@
     "pre-commit": "npx lint-staged"
   },
   "lint-staged": {
-    "**/*.{js,json}": ["prettier --write", "npm t -- ."],
-    "**/*.{md}": ["prettier --write"]
+    "**/*.{js,json}": ["prettier", "npm t"],
+    "**/*.{md}": ["prettier"]
   }
 }
