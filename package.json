@@ -13,6 +13,7 @@
     "version": "git add package.json",
     "postversion": "git push && git push --tags",
     "prepublish": "npm t",
+    "prepare": "npx simple-git-hooks && npm t",
     "format": "prettier --write \"**/*.{js,json,md}\""
   },
   "keywords": [],
@@ -28,7 +29,7 @@
   },
   "devDependencies": {
     "ava": "^4.1.0",
-    "husky": "^7.0.4",
+    "simple-git-hooks": "^2.0.0",
     "lint-staged": "^12.3.7",
     "prettier": "^2.6.0",
     "rimraf": "^3.0.2"
@@ -36,15 +37,12 @@
   "bin": {
     "toomuchdesign-create-project": "./cli.js"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged && npm t"
-    }
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged && npm t"
   },
   "lint-staged": {
     "**/*.{js,json,md}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   }
 }

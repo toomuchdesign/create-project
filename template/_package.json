@@ -9,7 +9,7 @@
     "preversion": "npm run prepare",
     "version": "git add package.json",
     "postversion": "git push && git push --tags",
-    "prepare": "npm t",
+    "prepare": "npx simple-git-hooks && npm t",
     "format": "prettier --write \"**/*.{js,json,md}\""
   },
   "keywords": [],
@@ -20,14 +20,12 @@
   "author": "Andrea Carraro <me@andreacarraro.it>",
   "license": "ISC",
   "devDependencies": {
-    "husky": "^4.0.0",
-    "lint-staged": "^10.0.0",
+    "simple-git-hooks": "^2.0.0",
+    "lint-staged": "^12.0.0",
     "prettier": "^2.0.0"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
   },
   "lint-staged": {
     "**/*.{js,json}": ["prettier --write", "npm t -- ."],
